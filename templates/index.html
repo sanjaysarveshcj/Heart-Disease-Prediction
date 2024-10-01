@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart Disease Prediction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('static/images/background.jpg'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                background-attachment: fixed;
+                height: 100vh;
+            }
+    
+            .container {
+                max-width: 600px;
+                margin: auto;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.8); 
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(99, 95, 95, 0.1);
+                margin-top: 50px;
+            }
+    
+            h2 {
+                text-align: center;
+                color: #1c1b24;
+            }
+    
+            label {
+                margin-top: 15px;
+                display: block;
+                font-weight: bold;
+                color: #212121;
+            }
+    
+            input[type="number"] {
+                width: 100%;
+                padding: 10px;
+                margin: 8px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+    
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color:#1c1b24;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+    
+            button:hover {
+                background-color: #484552;
+            }
+        </style>
+    </head>
+    
+    
+<body>
+    <div class="container">
+        <h2>Heart Disease Prediction</h2>
+        <form action="/predict" method="POST">
+            <label>Age:</label>
+            <input type="number" name="age" step="any" required>
+            
+            <label>Sex (0 = Female, 1 = Male):</label>
+            <input type="number" name="sex" step="any" required>
+
+            <label>Chest Pain Type (1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, 4 = asymptomatic):</label>
+            <input type="number" name="cp" step="any" required>
+
+            <label>Resting Blood Pressure:</label>
+            <input type="number" name="trestbps" step="any" required>
+
+            <label>Serum Cholestoral (mg/dl):</label>
+            <input type="number" name="chol" step="any" required>
+
+            <label>Fasting Blood Sugar (> 120 mg/dl, 1 = true, 0 = false):</label>
+            <input type="number" name="fbs" step="any" required>
+
+            <label>Resting ECG Results (0 to 2):</label>
+            <input type="number" name="restecg" step="any" required>
+
+            <label>Max Heart Rate Achieved:</label>
+            <input type="number" name="thalach" step="any" required>
+
+            <label>Exercise Induced Angina (1 = yes, 0 = no):</label>
+            <input type="number" name="exang" step="any" required>
+
+            <label>ST Depression Induced by Exercise:</label>
+            <input type="number" name="oldpeak" step="any" required>
+
+            <label>Slope of Peak Exercise ST Segment  (1 = upsloping, 2 = flat, 3 = downsloping):</label>
+            <input type="number" name="slope" step="any" required>
+
+            <label>Number of Major Vessels Colored by Fluoroscopy (0 to 3):</label>
+            <input type="number" name="ca" step="any" required>
+
+            <label>Thalassemia (3 = normal, 6 = fixed defect, 7 = reversible defect):</label>
+            <input type="number" name="thal" step="any" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
